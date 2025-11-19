@@ -3,13 +3,13 @@ import genresReducer from "./slices/genresSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import { thunk } from "./middleware/thunk";
 
-const store = configureStore( {
+const store = configureStore({
     reducer: {
         films: filmReducer,
         genres: genresReducer,
     },
-    middleware: ( getDefaultMiddleware ) => getDefaultMiddleware().concat( thunk ),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
     devTools: process.env.NODE_ENV !== "production",
-} );
+});
 
 export default store;

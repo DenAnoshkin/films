@@ -3,18 +3,20 @@ import { useParams } from "react-router";
 
 const PosterPage = () => {
     const filmId = useParams().filmId;
-    const data = useSelector( ( state ) => state );
+    const data = useSelector((state) => state);
     const films = data.films;
     const genres = data.genres;
-    const curFilm = films.entities.find( ( film ) => film.id.toString() === filmId );
-    const curFilmGenres = genres.entities.filter( ( genre ) =>
-        curFilm.genre_ids.includes( genre.id )
+    const curFilm = films.entities.find(
+        (film) => film.id.toString() === filmId
+    );
+    const curFilmGenres = genres.entities.filter((genre) =>
+        curFilm.genre_ids.includes(genre.id)
     );
 
     return (
         <article className="flex justify-between max-w-7xl mx-auto px-1 py-8 min-h-screen">
             <img
-                src={`https://image.tmdb.org/t/p/original${ curFilm.poster_path }`}
+                src={`https://image.tmdb.org/t/p/original${curFilm.poster_path}`}
                 alt="poster of film"
                 className="w-[500px] h-[700px]"
             />
@@ -24,7 +26,9 @@ const PosterPage = () => {
                     Original title - {curFilm.original_title}
                 </p>
                 <p className="mb-1 text-4xl font-bold">Film description</p>
-                <p className="mb-16 text-xl text-gray-300">{curFilm.overview}</p>
+                <p className="mb-16 text-xl text-gray-300">
+                    {curFilm.overview}
+                </p>
                 <table className="table-auto border-separate border-spacing-2 font-medium text-xl">
                     <tbody>
                         <tr>
@@ -34,9 +38,9 @@ const PosterPage = () => {
                         <tr>
                             <td>Genres:</td>
                             <td>
-                                {curFilmGenres.map( ( genre ) => {
+                                {curFilmGenres.map((genre) => {
                                     return <p key={genre.id}>{genre.name} </p>;
-                                } )}
+                                })}
                             </td>
                         </tr>
                         <tr>

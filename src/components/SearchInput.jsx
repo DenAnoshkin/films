@@ -1,4 +1,4 @@
-const SearchInput = ( { value, onChange } ) => {
+const SearchInput = ({ value, onChange }) => {
     return (
         <input
             value={value}

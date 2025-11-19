@@ -1,6 +1,8 @@
 const Error = () => {
     return (
-        <div className="flex justify-center items-center h-screen">Error path</div>
+        <div className="flex justify-center items-center h-screen">
+            Error path
+        </div>
     );
 };
 

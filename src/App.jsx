@@ -14,10 +14,10 @@ import { getGenres } from "./redux/slices/genresSlice";
 function App() {
     const dispatch = useDispatch();
 
-    useEffect( () => {
-        dispatch( getFilms() );
-        dispatch( getGenres() );
-    }, [ dispatch ] );
+    useEffect(() => {
+        dispatch(getFilms());
+        dispatch(getGenres());
+    }, [dispatch]);
 
     return (
         <div className="font-[Manrope] text-white">

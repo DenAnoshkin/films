@@ -1,16 +1,18 @@
 import _ from "lodash";
 
-const Pagination = ( { size, length, curPage, pageChange } ) => {
-    const numOfPage = _.range( 1, Math.ceil( length / size ) + 1 );
-    if ( numOfPage.length <= 1 ) {
+const Pagination = ({ size, length, curPage, pageChange }) => {
+    const numOfPage = _.range(1, Math.ceil(length / size) + 1);
+    if (numOfPage.length <= 1) {
         return null;
     }
     return (
         <div className="flex justify-center">
             <button
-                onClick={() => pageChange( curPage, -1 )}
+                onClick={() => pageChange(curPage, -1)}
                 style={
-                    curPage === 1 ? { visibility: "hidden" } : { visibility: "visible" }
+                    curPage === 1
+                        ? { visibility: "hidden" }
+                        : { visibility: "visible" }
                 }
                 className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 inset-ring inset-ring-gray-700 hover:bg-white/5 focus:z-20 focus:outline-offset-0"
             >
@@ -29,10 +31,10 @@ const Pagination = ( { size, length, curPage, pageChange } ) => {
                     />
                 </svg>
             </button>
-            {numOfPage.map( ( page ) => {
+            {numOfPage.map((page) => {
                 return (
                     <button
-                        onClick={() => pageChange( page )}
+                        onClick={() => pageChange(page)}
                         key={page}
                         className={
                             curPage === page
@@ -43,11 +45,11 @@ const Pagination = ( { size, length, curPage, pageChange } ) => {
                         {page}
                     </button>
                 );
-            } )}
+            })}
             <button
-                onClick={() => pageChange( curPage, 1 )}
+                onClick={() => pageChange(curPage, 1)}
                 style={
-                    curPage === Math.ceil( length / size )
+                    curPage === Math.ceil(length / size)
                         ? { visibility: "hidden" }
                         : { visibility: "visible" }
                 }
