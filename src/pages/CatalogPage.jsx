@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Pagination from "../components/Pagination";
 import PostersList from "../components/PosterList";
-import SearchInput from "../components/SearchInput";
 import { useSelector } from "react-redux";
+import Loading from "../components/Loading";
+import SearchInput from "../components/UI/SearchInput";
 
 const CatalogPage = () => {
     const films = useSelector((state) => state.films);
@@ -10,11 +11,7 @@ const CatalogPage = () => {
     const [searchInput, setSearchInput] = useState("");
 
     if (films.isLoading) {
-        return (
-            <div className="flex justify-center items-center h-screen">
-                Loading...
-            </div>
-        );
+        return <Loading />;
     }
 
     const pageSize = 9;
