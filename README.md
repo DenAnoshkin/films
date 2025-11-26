@@ -1,16 +1,25 @@
-# React + Vite
+# Films — фронтенд-приложение для фильмов
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Films — это фронтенд-приложение, позволяющее искать и просматривать фильмы. Это не полноценный стриминг-сервис, а клиентская часть, демонстрирующая базовый интерфейс для работы с фильмами: поиск, список фильмов, отображение карточек с информацией о фильме.
 
-Currently, two official plugins are available:
+Проект показывает, как может выглядеть веб-интерфейс кино-каталога: удобная навигация, отображение контента, минимум логики на стороне сервера (или её эмуляция), всё реализовано на стороне клиента.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Технологии и используемые библиотеки
 
-## React Compiler
+-   TMDB API — источник данных о фильмах (получение информации и результатов поиска)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   React — построение пользовательского интерфейса
 
-## Expanding the ESLint configuration
+-   React Router — маршрутизация между страницами
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-   React Redux — управление состоянием приложения
+
+-   Vite — сборщик и локальный dev-сервер
+
+-   JavaScript — основной язык разработки
+
+-   HTML — базовая разметка
+
+-   Tailwind CSS — написание стилей
+
+-   ESLint / Prettier — линтинг и форматирование кода
